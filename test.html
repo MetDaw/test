@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переключатель языков</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        #languageSwitcher {
+            margin-bottom: 20px;
+        }
+        .language-button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+        .language-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div id="languageSwitcher">
+    <button class="language-button" onclick="switchLanguage('ru')">Русский</button>
+    <button class="language-button" onclick="switchLanguage('en')">English</button>
+</div>
+
+<h1 id="title">Добро пожаловать на мой сайт!</h1>
+<p id="content">Это пример простого сайта с переключателем языков.</p>
+
+<footer>
+    <p>&copy; 2023 Мой простой сайт</p>
+</footer>
+
+<script>
+const translations = {
+    'ru': {
+        title: 'Добро пожаловать на мой сайт!',
+        content: 'Это пример простого сайта с переключателем языков.'
+    },
+    'en': {
+        title: 'Welcome to my website!',
+        content: 'This is a simple website example with a language switcher.'
+    }
+};
+
+function switchLanguage(lang) {
+    document.getElementById('title').innerText = translations[lang].title;
+    document.getElementById('content').innerText = translations[lang].content;
+}
+</script>
+
+</body>
+</html>
