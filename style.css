@@ -1,39 +1,74 @@
+body{
+    font-family: "PT Sans", sans-serif;
+    color: white;
+}
 header.h_container {
     display: flex;
    margin: 0px auto;
-   width: 1296px;
-    height: 110px;
-    padding: 40px 0px;
+   width: 1920px;
+    height: 85px;
+    padding: 40px 0px 0px 0px;
     justify-content: space-between;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    background-color: white;
+
 }
 img.main_logo {
-    
+    left: 312px;
     width: 108px;
     height: 30px;
+    position: absolute;
 }
-div.a_container {
+nav.a_container {
     display: flex;
     width: 613px ;
-    height: 22px;
+    left: 533px;
     gap: 30px;
+    position: absolute;
 }
-div.search {
+form.search {
     display: flex;
     width: 194px;
     height: 24px;
     gap: 20px;
+    position: relative;
+    left: 1260px;
+    
 }
 button.but_poisk {
+    border: none;
+    background-color: white;
     width: 24px;
-    height: 24px;
+    
+}
+input.poisk_stroka{
+   border: none;
+   outline: none;
+   width: 150px;
+}
+div.line_poisk{
+    background-color: #333;
+    width: 150px;
+    height: 1px;
+    border: 1px;
+    opacity: 20%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+img.znak_poisk{
+    width: 21.6px;
+    padding:  1.8px  0px 0px 1.8px ;
+    
 }
 
 
 a.nav_a { 
     color: #333;
     width: 58px;
-    height: 22px;
-    font-family: "PT Sans", sans-serif;
+    
     font-weight: 400;
     line-height: 140%;
     letter-spacing: 0%;
@@ -42,5 +77,279 @@ a.nav_a {
 }
 a.comp {
     width: 85px;
-    height: 22px;
+    
+}
+
+div.base_top_fon{
+    width: 1920px;
+    height: 750px;
+    top: 10px;
+    display: flex;
+    margin: 0px auto;
+    
+}
+div.base_top{
+    background-color:rgba(61, 52, 139, 0.5);
+    width: 1920px;
+    height: 750px;
+    display: flex;
+    position: absolute;
+    
+}
+div.top_O_companii{
+    width: 526px;
+    height: 336px;
+    top: 165px;
+    left: 312px;
+    gap: 60px;
+    position: relative;
+    
+}
+div.top_O_companii_text{
+    display: flex;
+    width: 526px;
+    height: 246px;
+    gap: 40px;
+    
+    position: relative;
+}
+h1.h_1{
+    width: 526px;
+    margin: 0;
+    
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 140%;
+  
+    
+}
+p.top_text{
+    width: 322px;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    font-size: 16px;
+    
+}    
+
+nav.nav_O_companii{
+    
+    bottom: 30px;
+    position: absolute;
+    
+    
+}
+a.a_O_companii{
+
+    width: 114px;
+    position: absolute;
+    display: flex;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 16px;
+    margin: 8px;
+    color: white;
+    
+     
+}
+div.base_block{
+    display: grid;
+    grid-template-columns: repeat(2,306px);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    width: 636px;
+    height: 524px;
+    top: 113px;
+    position: absolute;
+    left: 972px;
+}
+div.block{
+    background-color: rgba(93, 183, 222, 1);
+    border-radius: 20px;
+    padding: 30px 35px ;
+    display: flex;
+    position: relative;
+}
+p.block_text{
+    text-transform: uppercase;
+    font-size: 13px;
+    margin: 0;
+    line-height: 140%;
+    font-weight: 700;
+}
+p.block_text_2{
+    font-size: 19px;
+    line-height: 140%;
+    position: absolute;
+    bottom: 30px;
+    margin: 0;
+    font-weight: 700;
+
+}
+div.base_yslygi{
+    width: 1296px;
+    height: 717px;
+    margin: 150px auto;
+    display: flex;
+    position: relative;
+}
+h2.yslygi_text{
+    margin: 0;
+    font-size: 40px;
+    color: rgba(51, 51, 51, 1);
+}
+div.main_yslygi{
+    grid-template-columns: repeat(2,416px);
+    width: 856px;
+    height: 752px;
+    position: absolute;
+    top: 0px;
+    left:440px;
+}
+div.main_yslygi_block{
+    
+    background-color: rgba(61, 52, 139, 1);
+    
+}
+div.base_O_kompanii{
+    position: relative;
+    width: 1920px;
+    height: 876px;
+    margin: 0 auto;
+    background-color: rgba(61, 52, 139, 0.1);
+}
+h2.O_kompanii_zagl{
+    position: absolute;
+    color: rgba(51, 51, 51, 1);
+    font-size: 40px;
+    font-weight: 700;
+    left: 312px;
+    top: 100px;
+}
+div.base_text_o_kompanii{
+    width: 636px;
+    left: 312px;
+    top: 216px;
+    position: absolute;
+}
+p.O_kompanii_text{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+}
+li.O_kompanii_text_spisok{
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(51, 51, 51, 1);
+    margin: 18px;
+}
+div.block_kartinka{
+    position: absolute;
+    padding: 0;
+    left: 1082px;
+    top: 216px;
+    
+    
+}  
+div.O_kompanii_block{
+    position: absolute;
+    
+    bottom: 110px;
+    left: 1082px;
+    
+    padding: 30px 35px;
+    width: 456px;
+    height: 110px;
+    
+
+}
+div.base_novosti{
+    margin: 150px auto;
+    width: 1296px;
+    position: relative;
+
+}
+
+h2.text_novosti{
+    color:rgba(51, 51, 51, 1);
+    font-weight: 700;
+    font-size: 40px; 
+}
+
+    
+
+div.base_block_novosti{display: grid;
+    grid-template-columns: repeat(4,306px);
+    grid-column-gap: 24px;
+    grid-row-gap: 24px;
+    position: relative;}
+h2.novosti_text{
+    color:rgba(51, 51, 51, 1) ;
+    font-size: 19px;
+}
+p.novosti_time{
+    color: rgba(51, 51, 51, 1);
+    font-weight: 700;
+}
+p.novosti_text_2{
+    color: rgba(51, 51, 51, 1);
+    position: static;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+    
+footer{
+    background-color: rgb(79, 72, 141);
+    width: 1920px;
+    margin: 0 auto;
+}    
+
+div.base_top_footer{
+    background-color:rgb(79, 72, 141);
+    justify-content: space-between;
+    display: flex;
+    width: 1296px;
+    height: 30px;
+    margin: 25px auto;
+    padding: 20px;
+}
+div.adres{
+    display: flex;
+    
+}
+div.fooeter_logo{
+    display: flex;
+    
+}
+div.sviaz{
+    display: flex;
+}
+div.pocta{
+    display: flex;
+}   
+div.telefon{
+    display: flex;
+
+}
+img.znachok{
+    margin: 0 40px;
+    
+}
+div.base_footer{
+    background-color:rgba(61, 52, 139, 1);
+    width: 1920px;
+    margin: 0 auto;
+    
+    
+}
+p.footer_text{
+    left: 845px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    padding: 30px;
+
 }

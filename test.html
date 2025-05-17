@@ -1,62 +1,99 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Переключатель языков</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        #languageSwitcher {
-            margin-bottom: 20px;
-        }
-        .language-button {
-            padding: 10px 15px;
-            cursor: pointer;
-            border: none;
-            background-color: #4CAF50;
-            color: white;
-            border-radius: 5px;
-            margin-right: 5px;
-        }
-        .language-button:hover {
-            background-color: #45a049;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Выдвижное меню смены языка</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .language-selector {
+    position: relative;
+    display: inline-block;
+  }
+  .language-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .language-button:hover {
+    background-color: #0056b3;
+  }
+  .language-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    z-index: 1;
+    margin-top: 5px;
+  }
+  .language-menu button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: white;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  .language-menu button:hover {
+    background-color: rgba(0, 255, 106, 0.5);
+  }
+</style>
 </head>
 <body>
 
-<div id="languageSwitcher">
-    <button class="language-button" onclick="switchLanguage('ru')">Русский</button>
-    <button class="language-button" onclick="switchLanguage('en')">English</button>
+<div class="language-selector">
+  <button class="language-button" id="langBtn">▼ ru</button>
+  <div class="language-menu" id="langMenu">
+    <button data-lang="ru">ru</button>
+    <button data-lang="en">Eng</button>
+    <button data-lang="de">Deu</button>
+    <button data-lang="fr">Fr</button>
+  </div>
 </div>
 
-<h1 id="title">Добро пожаловать на мой сайт!</h1>
-<p id="content">Это пример простого сайта с переключателем языков.</p>
-
-<footer>
-    <p>&copy; 2023 Мой простой сайт</p>
-</footer>
+<p id="text">Выберите язык из меню.</p>
 
 <script>
+const langBtn = document.getElementById('langBtn');
+const langMenu = document.getElementById('langMenu');
+const text = document.getElementById('text');
+
+langBtn.addEventListener('click', () => {
+  langMenu.style.display = langMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+// Закрыть меню при клике вне его
+window.addEventListener('click', (e) => {
+  if (!e.target.matches('.language-button')) {
+      langMenu.style.display = 'none';
+  }
+});
+
+// Пример смены текста при выборе языка
 const translations = {
-    'ru': {
-        title: 'Добро пожаловать на мой сайт!',
-        content: 'Это пример простого сайта с переключателем языков.'
-    },
-    'en': {
-        title: 'Welcome to my website!',
-        content: 'This is a simple website example with a language switcher.'
-    }
+  ru: "Привет! Выберите язык из меню.",
+  en: "Hello! Please select a language from the menu.",
+  de: "Hallo! Bitte wählen Sie eine Sprache aus dem Menü.",
+  fr: "Bonjour! Veuillez sélectionner une langue dans le menu."
 };
 
-function switchLanguage(lang) {
-    document.getElementById('title').innerText = translations[lang].title;
-    document.getElementById('content').innerText = translations[lang].content;
-}
+langMenu.querySelectorAll('button').forEach(btn => {
+   btn.addEventListener('click', () => {
+     const selectedLang = btn.getAttribute('data-lang');
+     text.textContent = translations[selectedLang] || translations['ru'];
+     langBtn.textContent = btn.textContent + " ▼";
+     langMenu.style.display = 'none';
+   });
+});
 </script>
 
 </body>
