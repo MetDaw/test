@@ -63,7 +63,14 @@ img.znak_poisk{
     padding:  1.8px  0px 0px 1.8px ;
     
 }
+ul.spisok_nav{
+    display: flex;
 
+}
+li.spisok_nav_li{
+    list-style-type: none ;
+    margin: 0 4px;
+}
 
 a.nav_a { 
     color: #333;
